@@ -1,0 +1,12 @@
+footer a:hover {
+  text-decoration: underline;
+  color: #ffc107;
+}
+
+footer {
+  font-size: 0.95rem;
+}
+
+.lr-text {
+  justify-content: space-between;
+}

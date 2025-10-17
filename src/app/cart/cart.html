@@ -1,0 +1,83 @@
+<div class="container py-4">
+  <h3 class="mb-3">Your Cart ({{ cart.cart_list.length }} items)</h3>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <table class="table align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Product</th>
+            <th class="text-end">Price</th>
+            <th class="text-center">Qty</th>
+            <th class="text-end">Subtotal</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of cart.cart_list; let i = index">
+            <td>
+              <div class="d-flex align-items-center gap-3">
+                <img [src]="item.image" alt="" class="thumb rounded">
+                <div>
+                  <div class="fw-semibold">{{ item.title }}</div>
+                  <small class="text-muted">{{ item.category }}</small>
+                </div>
+              </div>
+            </td>
+
+            <td class="text-end">${{ item.price | number: '1.2-2' }}</td>
+
+            <td class="text-center">
+              <div class="btn-group">
+                <button class="btn btn-outline-danger" (click)="cart.decreaseQty(i)">−</button>
+                <span class="btn btn-light disabled">{{ item.qty }}</span>
+                <button class="btn btn-outline-primary" (click)="cart.increaseQty(i)">+</button>
+              </div>
+            </td>
+
+            <td class="text-end">${{ item.price * item.qty | number: '1.2-2' }}</td>
+
+            <td class="text-end">
+              <button class="btn btn-sm btn-outline-secondary" (click)="cart.removeItem(item)">
+                Remove
+              </button>
+            </td>
+          </tr>
+
+          <tr *ngIf="cart.cart_list.length === 0">
+            <td colspan="5" class="text-center py-5 text-muted">
+              Cart is empty. <a routerLink="/">Shop now</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5>Summary</h5>
+          <div class="d-flex justify-content-between">
+            <span>Subtotal</span>
+            <strong>${{ cart.getCartTotal() | number: '1.2-2' }}</strong>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span>Shipping</span>
+            <strong>${{ shippingFlat | number: '1.2-2' }}</strong>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <span>Total</span>
+            <strong>${{ total | number: '1.2-2' }}</strong>
+          </div>
+
+          <div class="d-grid gap-2 mt-3">
+            <button class="btn btn-primary" routerLink="/checkout">Proceed to Checkout</button>
+            <a routerLink="/" class="btn btn-outline-success">Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h4 class="mb-3 fw-bold">Product Catalog</h4>
+
+  <div class="mb-3">
+    <button class="btn btn-outline-dark btn-sm me-2" (click)="setCat('All')">All</button>
+    <button class="btn btn-outline-dark btn-sm me-2" (click)="setCat('men')">Men Clothes</button>
+    <button class="btn btn-outline-dark btn-sm me-2" (click)="setCat('women')">Women Clothes</button>
+    <button class="btn btn-outline-dark btn-sm me-2" (click)="setCat('electronics')">Electronics</button>
+    <button class="btn btn-outline-dark btn-sm" (click)="setCat('jewelery')">Jewelery</button>
+  </div>
+
+  <div class="row g-3 mt-4">
+    <div class="col-md-3 col-lg-3 col-sm-12" *ngFor="let p of filtered">
+      <app-product-card [product]="p"></app-product-card>
+    </div>
+  </div>
+</div>
+

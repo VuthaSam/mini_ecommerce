@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+  <div class="container-fluid px-4">
+    <!-- Left: Logo + Name -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/home">
+      <img src="shopify.ico" alt="logo" width="30" height="30" class="me-2">
+      <span class="fw-bold">Smart Store</span>
+    </a>
+
+    <!-- Toggle (mobile) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about">About</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Center + Right -->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+
+      <!-- Center: Search Bar -->
+      <!-- <form class="d-flex mx-auto w-50" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search product..." aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit">
+          <i class="bi bi-search"><img src="Search-icon.png"></i>
+        </button>
+      </form> -->
+
+      <!-- Right: Cart + Checkout -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+        <li class="nav-item me-4">
+          <a class="nav-link position-relative" routerLink="/cart">
+            <i class="bi bi-cart3 fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {{cart.cart_list.length}}
+            </span>
+            <img src="Card-icon.png">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
