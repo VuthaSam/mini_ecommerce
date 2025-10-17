@@ -1,12 +1,10 @@
 <nav class="navbar navbar-expand-lg bg-white shadow-sm">
   <div class="container-fluid px-4">
-    <!-- Left: Logo + Name -->
     <a class="navbar-brand d-flex align-items-center" routerLink="/home">
       <img src="shopify.ico" alt="logo" width="30" height="30" class="me-2">
       <span class="fw-bold">Smart Store</span>
     </a>
 
-    <!-- Toggle (mobile) -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
             data-bs-target="#navbarNav" aria-controls="navbarNav" 
             aria-expanded="false" aria-label="Toggle navigation">
@@ -24,18 +22,7 @@
       </ul>
     </div>
 
-    <!-- Center + Right -->
-    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-
-      <!-- Center: Search Bar -->
-      <!-- <form class="d-flex mx-auto w-50" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search product..." aria-label="Search">
-        <button class="btn btn-outline-primary" type="submit">
-          <i class="bi bi-search"><img src="Search-icon.png"></i>
-        </button>
-      </form> -->
-
-      <!-- Right: Cart + Checkout -->
+    <div class="collapse navbar-collapse justify-content-between pcart" id="navbarNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
         <li class="nav-item me-4">
           <a class="nav-link position-relative" routerLink="/cart">
@@ -43,10 +30,11 @@
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               {{cart.cart_list.length}}
             </span>
-            <img src="Card-icon.png">
+            <img src="Card-icon.png"> <p>Cart</p>
           </a>
         </li>
       </ul>
     </div>
+
   </div>
 </nav>

@@ -1,2 +1,6 @@
-.card { border-radius: 1rem; }
-textarea { resize: none; }
+.card {
+     border-radius: 1rem; 
+}
+textarea { 
+    resize: none; 
+}

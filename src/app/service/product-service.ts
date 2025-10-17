@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 declare const axios:any
 declare const $:any
@@ -7,8 +9,9 @@ declare const $:any
 })
 export class ProductService {
   private product: any[] = [];
+    private base = 'https://fakestoreapi.com/products';
   
-  constructor() {
+  constructor(private http: HttpClient) {
     let vm = this;
     $.LoadingOverlay("show");
     axios.get('https://fakestoreapi.com/products')
@@ -26,7 +29,11 @@ export class ProductService {
     $.LoadingOverlay("hide");
   });
   }
-  getProduct() {
-    return this.product
+    getProducts(): Observable<any[]> {
+    return this.http.get<any[]>(this.base);
+  }
+
+    getProduct(id: number): Observable<any> {
+    return this.http.get<any>(`${this.base}/${id}`);
   }
 }

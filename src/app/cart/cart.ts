@@ -18,8 +18,4 @@ export class Cart {
   get total() {
     return this.cart.getCartTotal() + this.shippingFlat;
   }
-
-  proceed() {
-    alert('Checkout page coming soon ✅');
-  }
 }

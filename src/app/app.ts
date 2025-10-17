@@ -42,6 +42,10 @@ showSlide = true;
           this.showSlide = false;
           this.showFooter = false;
         }
+        else if (current.startsWith('/product',)) {
+          this.showSlide = false;
+          this.showFooter = false;
+        }
         else {
           this.showSlide = true;
           this.showFooter = true;

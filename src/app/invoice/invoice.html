@@ -3,9 +3,9 @@
   <div class="text-muted mb-3">{{ order.id }} · {{ order.date }}</div>
 
   <h5>Customer</h5>
-  <div>{{ order.customer.name }}</div>
-  <div>{{ order.customer.phone }}</div>
-  <div class="mb-3">{{ order.customer.address }}</div>
+  <div>Name : {{ order.customer.name }}</div>
+  <div>Phone Number :{{ order.customer.phone }}</div>
+  <div class="mb-3">Address : {{ order.customer.address }}</div>
 
   <table class="table">
     <thead><tr><th>Item</th><th class="text-end">Qty</th><th class="text-end">Price</th><th class="text-end">Subtotal</th></tr></thead>

@@ -1,0 +1,14 @@
+img{ 
+    max-height:420px; 
+    object-fit:contain; 
+}
+
+.btn-pos {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.btn-add {
+    width: 200px;
+    height: 60px;
+}

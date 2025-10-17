@@ -4,6 +4,7 @@ import { About } from './about/about';
 import { Cart } from './cart/cart';
 import { Checkout } from './checkout/checkout';
 import { Invoice } from './invoice/invoice';
+import { Product } from './product/product';
 
 export const routes: Routes = [
 { path: '', component: Home }, // Home
@@ -12,18 +13,7 @@ export const routes: Routes = [
 { path: 'cart', component: Cart},
 { path: 'checkout', loadComponent: () => import('./checkout/checkout').then(m => m.Checkout) },
 { path: 'invoice', loadComponent: () => import('./invoice/invoice').then(m => m.Invoice) },
-
-//   {
-//     path: 'product/:id',
-//     loadComponent: () =>
-//       import('./product-detail/product-detail.component')
-//     .then(m => m.ProductDetailComponent)
-//   },
-//   {
-//     path: 'cart',
-//     loadComponent: () =>
-//       import('./cart/cart.component')
-//     .then(m => m.CartComponent)
-//   },
-  { path: '**', redirectTo: '' } // fallback
+{ path: '', loadComponent: () => import('./home/home').then(m => m.Home) },
+{ path: 'product/:id', component: Product },
+{ path: '**', redirectTo: '' } // fallback
 ];
